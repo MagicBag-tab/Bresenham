@@ -22,6 +22,13 @@ fn main() {
         (597, 215), (552, 214), (517, 144), (466, 180)];
     let polygon_5 = [(682, 175), (708, 120), (735, 148), (739, 170)];
 
+    framebuffer.set_current_color(0xFFFFFF);
+    framebuffer.draw_polygon(&polygon_1);
+    framebuffer.draw_polygon(&polygon_2);
+    framebuffer.draw_polygon(&polygon_3);
+    framebuffer.draw_polygon(&polygon_4);
+    framebuffer.draw_polygon(&polygon_5);
+
     framebuffer.set_current_color(0xE5EDB2);
     framebuffer.scanline_fill(&polygon_1);
     framebuffer.set_current_color(0xFFB703);
@@ -30,15 +37,6 @@ fn main() {
     framebuffer.scanline_fill(&polygon_3);
     framebuffer.set_current_color(0x90BE6D);
     framebuffer.scanline_fill(&polygon_4);
-    framebuffer.set_current_color(0x000000);
-    framebuffer.scanline_fill(&polygon_5);
-
-    framebuffer.set_current_color(0xFFFFFF);
-    framebuffer.draw_polygon(&polygon_1);
-    framebuffer.draw_polygon(&polygon_2);
-    framebuffer.draw_polygon(&polygon_3);
-    framebuffer.draw_polygon(&polygon_4);
-    framebuffer.draw_polygon(&polygon_5);
 
     let _ = framebuffer.render_buffer("output.bmp");
 

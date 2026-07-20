@@ -3,7 +3,7 @@ use crate::line::Line;
 
 pub trait Polygon {
     fn draw_polygon(&mut self, points: &[(usize, usize)]);
-    fn scanline_fill(&mut self, points: &[(usize, usize)]);
+    fn fill(&mut self, points: &[(usize, usize)]);
 }
 
 impl Polygon for Framebuffer {
@@ -20,7 +20,7 @@ impl Polygon for Framebuffer {
         }
     }
 
-    fn scanline_fill(&mut self, points: &[(usize, usize)]) {
+    fn fill(&mut self, points: &[(usize, usize)]) {
         if points.len() < 3 {
             return;
         }

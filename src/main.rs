@@ -30,13 +30,13 @@ fn main() {
     framebuffer.draw_polygon(&polygon_5);
 
     framebuffer.set_current_color(0xE5EDB2);
-    framebuffer.scanline_fill(&polygon_1);
+    framebuffer.fill(&polygon_1);
     framebuffer.set_current_color(0xFFB703);
-    framebuffer.scanline_fill(&polygon_2);
+    framebuffer.fill(&polygon_2);
     framebuffer.set_current_color(0x8ECAE6);
-    framebuffer.scanline_fill(&polygon_3);
+    framebuffer.fill(&polygon_3);
     framebuffer.set_current_color(0x90BE6D);
-    framebuffer.scanline_fill(&polygon_4);
+    framebuffer.fill(&polygon_4);
 
     let _ = framebuffer.render_buffer("output.bmp");
 
